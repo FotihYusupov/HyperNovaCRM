@@ -49,7 +49,7 @@ const paginate = async (model, query, route, ...populateFields) => {
     const sortOption = sortFn(sort);
     const selectFields = includes ? includes.replace(/,/g, " ") : "";
     const results = await model
-      .find({ ...filter })
+      .find({ deleted: false, ...filter })
       .select(selectFields)
       .skip((page - 1) * perPage)
       .sort(sortOption)
@@ -59,7 +59,7 @@ const paginate = async (model, query, route, ...populateFields) => {
     // Populate additional fields if provided
     populatedResults = await populateAdditionalFields(populatedResults, populateFields);
 
-    const totalCount = await model.countDocuments();
+    const totalCount = await model.countDocuments({ ...filter });
     const totalPages = Math.ceil(totalCount / perPage);
 
     return {

@@ -1,0 +1,68 @@
+Gender {
+  1 = male
+  2 = female
+}
+
+bot {
+  1 = true
+  2 = false
+}
+
+active {
+  1 = true,
+  2 = false
+}
+
+balanceType {
+  1 = bank
+  2 = card
+  3 = cash
+}
+
+historyType {
+  1 = plus
+  2 minus
+}
+
+clients -> status {
+  1 = active,
+  2 = inactive,
+  3 = pending
+}
+
+projects -> status {
+  1 = pending, 
+  2 = inProgress,
+  3 = completed, 
+  4 = onHold
+}
+
+projects -> priority {
+  1 = Low,
+  2 = Medium,
+  3 = High  
+}
+
+User
+  name
+  lastName
+  email
+  phoneNumber
+  passportSeries
+  cardNumber
+  address
+  login
+  password
+  salary
+  gender
+  role
+  dateBirth
+  bot
+
+
+Tasks
+  1.Bank, Card, Cash controllerlarini routlarini ulab test qilish va docs yozish. // Done!
+  2.Balancedan ayiradigan funksiya yozish.
+  3.Pul kirim chiqimlarini history sini yozadigan funksiya yozish.
+  4.Ishchilarga oylik hisoblashni qilish.
+  5.Vakansiya joyini qo'shish.
